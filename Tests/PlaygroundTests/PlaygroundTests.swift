@@ -13,18 +13,17 @@ final class PlaygroundTests: XCTestCase {
     
     func testExample() {
         let realm = try! Realm()
-        let object = TestObject()
+        let objects = [TestObject()]
         try! realm.write {
-            realm.add(object)
+            realm.add(objects)
         }
-        let list = List<TestObject>()
-        list.append(object)
+        let threadSafeObjects = objects.map{ ThreadSafeReference(to: $0) }
         let expectation = XCTestExpectation()
         DispatchQueue.init(label: "queue1").async {
             let realm = try! Realm()
             try! realm.write {
-                for object in list {
-                    realm.delete(object)
+                threadSafeObjects.forEach { (threadSafeObject: ThreadSafeReference<TestObject>) in
+                    realm.delete(realm.resolve(threadSafeObject)!)
                 }
             }
             expectation.fulfill()
