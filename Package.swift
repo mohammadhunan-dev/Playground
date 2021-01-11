@@ -25,6 +25,10 @@ let package = Package(
             ]),
         .testTarget(
             name: "PlaygroundTests",
-            dependencies: ["Playground"]),
+            dependencies: ["Playground"],
+            resources: [
+                .copy("examplePass.json"),
+                .copy("exampleFail.json"),
+            ]),
     ]
 )

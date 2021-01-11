@@ -1,0 +1,4 @@
+{
+    "nonOptionalString" : "foo",
+    "optionalDouble": 42
+}
