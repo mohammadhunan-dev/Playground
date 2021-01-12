@@ -1,76 +1,59 @@
 import XCTest
 import RealmSwift
 
-class TestObject: Object, Decodable {
-    @objc dynamic var nonOptionalString: String = ""
-    dynamic var optionalDouble = RealmOptional<Double>()
-    enum CodingKeys: String, CodingKey {
-        case nonOptionalString
-        case optionalDouble
+final class CodableObject: Object, Codable {
+    var doubleOpt = RealmOptional<Double>()
+    var doubleOptNoKey = RealmOptional<Double>()
+}
+
+extension JSONDecoder {
+    open func decode<T>(_ type: T.Type, from data: Data, allowMissingKeys: Bool) throws -> T where T: Object, T: Codable {
+        var jsonObject = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+        if var jsonDictionary = jsonObject as? [String: Any] {
+            let mirror = Mirror(reflecting: type.init())
+            for child in mirror.children {
+                // TODO: Traverse the children
+                if let label = child.label {
+                    if !jsonDictionary.keys.contains(label) {
+                        switch child.value {
+                        case is RealmOptional<Int>:
+                            jsonDictionary[label] = Int()
+                        case is RealmOptional<Int8>:
+                            jsonDictionary[label] = Int8()
+                        case is RealmOptional<Int16>:
+                            jsonDictionary[label] = Int16()
+                        case is RealmOptional<Int32>:
+                            jsonDictionary[label] = Int32()
+                        case is RealmOptional<Int64>:
+                            jsonDictionary[label] = Int64()
+                        case is RealmOptional<Float>:
+                            jsonDictionary[label] = Float()
+                        case is RealmOptional<Double>:
+                            jsonDictionary[label] = Double()
+                        case is RealmOptional<Bool>:
+                            jsonDictionary[label] = Bool()
+                        default:
+                            // Solution on applies to RealmOptional types.
+                            break
+                        }
+                    }
+                }
+            }
+            jsonObject = jsonDictionary
+        }
+        let newData = try JSONSerialization.data(withJSONObject: jsonObject, options: .fragmentsAllowed)
+        return try self.decode(type, from: newData)
     }
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        nonOptionalString = try container.decode(String.self, forKey: .nonOptionalString)
-        optionalDouble = try container.decode(RealmOptional<Double>.self, forKey: .optionalDouble)
-        super.init()
-    }
-    required override init() { super.init() }
-    override static func primaryKey() -> String? { return "nonOptionalString" }
 }
 
 final class PlaygroundTests: XCTestCase {
     
-    override func setUp() {
-        _ = try! Realm.deleteFiles(for: Realm.Configuration.defaultConfiguration)
-    }
-    
-    override func tearDown() {
-        _ = try! Realm.deleteFiles(for: Realm.Configuration.defaultConfiguration)
-    }
-    
-    func testExamplePass() {
+    func testCodableObjectRealm() {
+        let str = "{ \"doubleOpt\": 23 }"
         do {
-            guard let path = Bundle.module.path(forResource: "examplePass", ofType: "json") else {
-                XCTFail("Path must not be nil.")
-                return
-            }
-            
-            let url = URL(fileURLWithPath: path)
-            let data = try Data(contentsOf: url)
-            let user = try JSONDecoder().decode(TestObject.self, from: data)
-            
-            XCTAssertEqual(user.nonOptionalString, "foo")
-            XCTAssertEqual(user.optionalDouble, RealmOptional<Double>(42))
-            
-            let realm = try Realm()
-            try realm.write {
-                realm.add(user)
-            }
-            
-        } catch let error {
-            XCTFail(String(describing: error))
-        }
-    }
-    
-    func testExamplePassFail() {
-        do {
-            guard let path = Bundle.module.path(forResource: "exampleFail", ofType: "json") else {
-                XCTFail("Path must not be nil.")
-                return
-            }
-            
-            let url = URL(fileURLWithPath: path)
-            let data = try Data(contentsOf: url)
-            let user = try JSONDecoder().decode(TestObject.self, from: data)
-            
-            XCTAssertEqual(user.nonOptionalString, "foo")
-            XCTAssertEqual(user.optionalDouble, RealmOptional<Double>(42))
-            
-            let realm = try Realm()
-            try realm.write {
-                realm.add(user)
-            }
-            
+            let decodedObject = try JSONDecoder().decode(CodableObject.self, from: Data(str.utf8), allowMissingKeys: true)
+            XCTAssertEqual(decodedObject.doubleOpt.value, 23)
+            XCTAssertEqual(decodedObject.doubleOptNoKey.value, 0)
         } catch let error {
             XCTFail(String(describing: error))
         }
