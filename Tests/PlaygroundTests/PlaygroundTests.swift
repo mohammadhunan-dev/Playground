@@ -48,9 +48,9 @@ extension JSONDecoder {
 final class PlaygroundTests: XCTestCase {
     
     func testCodableObjectRealm() {
-        let str = "{ \"doubleOpt\": 23 }"
+        let jsonString = "{ \"doubleOpt\": 23 }"
         do {
-            let decodedObject = try JSONDecoder().decode(CodableObject.self, from: Data(str.utf8), allowMissingKeys: true)
+            let decodedObject = try JSONDecoder().decode(CodableObject.self, from: Data(jsonString.utf8), allowMissingKeys: true)
             XCTAssertEqual(decodedObject.doubleOpt.value, 23)
             XCTAssertEqual(decodedObject.doubleOptNoKey.value, 0)
         } catch let error {
