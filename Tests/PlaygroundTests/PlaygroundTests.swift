@@ -12,7 +12,6 @@ extension JSONDecoder {
         if var jsonDictionary = jsonObject as? [String: Any] {
             let mirror = Mirror(reflecting: type.init())
             for child in mirror.children {
-                // TODO: Traverse the children
                 if let label = child.label {
                     if !jsonDictionary.keys.contains(label) {
                         switch child.value {
@@ -33,7 +32,7 @@ extension JSONDecoder {
                         case is RealmOptional<Bool>:
                             jsonDictionary[label] = Bool()
                         default:
-                            // Solution on applies to RealmOptional types.
+                            // Only the `RealmOptional` type is relevant here.
                             break
                         }
                     }
