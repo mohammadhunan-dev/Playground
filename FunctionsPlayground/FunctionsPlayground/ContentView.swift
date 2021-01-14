@@ -11,29 +11,10 @@ import RealmSwift
 struct ContentView: View {
     
     let app = App(id: "functions-gjsvg")
+    @MongoCallable<Foo> var foo
     
     var body: some View {
-        NavigationView {
-            VStack {
-                let detailView = DetailView().environment(\.realmApp, app)
-                NavigationLink(destination: detailView) {
-                    Text("Environment Access")
-                }
-                Button("Direct Access") {
-                    app.currentUser?.function()
-                }
-            }
-        }.onAppear() {
-            let anonymousCredentials = Credentials.anonymous
-            app.login(credentials: anonymousCredentials) { (result) in
-                switch result {
-                case .failure(let error):
-                    print("Login failed: \(error.localizedDescription)")
-                case .success(let user):
-                    print("Successfully logged in as user \(user)")
-                }
-            }
-        }
+        Text("\(foo.count)")
     }
 }
 

@@ -15,8 +15,8 @@
 		7DBC3F9525AF6CF3004820B0 /* FunctionsPlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBC3F9425AF6CF3004820B0 /* FunctionsPlaygroundUITests.swift */; };
 		7DBC3FA725AF6D67004820B0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7DBC3FA625AF6D67004820B0 /* Realm */; };
 		7DBC3FA925AF6D67004820B0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7DBC3FA825AF6D67004820B0 /* RealmSwift */; };
-		7DBC3FBB25B05759004820B0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBC3FBA25B05759004820B0 /* DetailView.swift */; };
 		7DBC3FC625B061E6004820B0 /* RealmAppKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBC3FC525B061E6004820B0 /* RealmAppKey.swift */; };
+		7DBC3FD425B07460004820B0 /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBC3FD325B07460004820B0 /* PropertyWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +49,8 @@
 		7DBC3F9025AF6CF3004820B0 /* FunctionsPlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunctionsPlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DBC3F9425AF6CF3004820B0 /* FunctionsPlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsPlaygroundUITests.swift; sourceTree = "<group>"; };
 		7DBC3F9625AF6CF3004820B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DBC3FBA25B05759004820B0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		7DBC3FC525B061E6004820B0 /* RealmAppKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAppKey.swift; sourceTree = "<group>"; };
+		7DBC3FD325B07460004820B0 /* PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +105,8 @@
 			children = (
 				7DBC3F7725AF6CF2004820B0 /* FunctionsPlaygroundApp.swift */,
 				7DBC3F7925AF6CF2004820B0 /* ContentView.swift */,
-				7DBC3FBA25B05759004820B0 /* DetailView.swift */,
 				7DBC3FC525B061E6004820B0 /* RealmAppKey.swift */,
+				7DBC3FD325B07460004820B0 /* PropertyWrapper.swift */,
 				7DBC3F7B25AF6CF2004820B0 /* Assets.xcassets */,
 				7DBC3F8025AF6CF2004820B0 /* Info.plist */,
 				7DBC3F7D25AF6CF2004820B0 /* Preview Content */,
@@ -276,8 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DBC3FBB25B05759004820B0 /* DetailView.swift in Sources */,
 				7DBC3F7A25AF6CF2004820B0 /* ContentView.swift in Sources */,
+				7DBC3FD425B07460004820B0 /* PropertyWrapper.swift in Sources */,
 				7DBC3F7825AF6CF2004820B0 /* FunctionsPlaygroundApp.swift in Sources */,
 				7DBC3FC625B061E6004820B0 /* RealmAppKey.swift in Sources */,
 			);

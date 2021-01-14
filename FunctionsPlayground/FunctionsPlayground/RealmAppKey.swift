@@ -23,22 +23,3 @@ extension EnvironmentValues {
         }
     }
 }
-
-extension RealmSwift.User {
-    
-    func function() {
-        self.functions.function0([1, 2]) { sum, error in
-            guard error == nil else {
-                print("Function call failed: \(String(describing: error))")
-                return
-            }
-            guard case let .double(value) = sum else {
-                print("Unexpected non-double result: \(sum ?? "nil")");
-                return
-            }
-            print("Called function 'sum' and got result: \(value)")
-            assert(value == 3)
-        }
-    }
-    
-}
