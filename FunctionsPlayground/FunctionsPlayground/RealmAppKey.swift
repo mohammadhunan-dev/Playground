@@ -16,6 +16,15 @@ struct AppKey: EnvironmentKey {
 extension EnvironmentValues {
     var realmApp: RealmSwift.App {
         get {
+            let anonymousCredentials = Credentials.anonymous
+            App(id: "functions-gjsvg").login(credentials: anonymousCredentials) { (loginResult) in
+                switch loginResult {
+                case .failure(let error):
+                    print("Login failed: \(error.localizedDescription)")
+                case .success(let user):
+                    print("Successfully logged in as user \(user)")
+                }
+            }
             return self[AppKey.self]
         }
         set {

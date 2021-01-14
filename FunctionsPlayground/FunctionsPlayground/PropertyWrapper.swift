@@ -18,19 +18,10 @@ struct Foo: Identifiable {
     @Environment(\.realmApp) var app
     @State var result: [T] = []
     @State var token: AnyCancellable?
-    //    init(database: String, collection: String) {
-    //
-    //    }
-    init() {
-        fetch()
-    }
     var wrappedValue: [T] {
         result
     }
-    func retry() {
-        fetch()
-    }
-    func fetch() {
+    public func fetch() {
         token?.cancel()
         token = app.currentUser?
             .functions.featuredCars([AnyBSON]())

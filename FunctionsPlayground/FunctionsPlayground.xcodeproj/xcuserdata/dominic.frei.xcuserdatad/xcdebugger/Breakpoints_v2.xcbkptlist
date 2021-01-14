@@ -3,4 +3,70 @@
    uuid = "0932A9F0-5311-4B4F-A242-E25FF4840366"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E775CCBC-28E8-48F4-9178-A7AD73A57DC3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FunctionsPlayground/PropertyWrapper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "fetch()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8A6F118-295C-461D-9E73-3EE9DB6065AE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/FunctionsPlayground-bckguukzyyxuudauioqbupokpoky/SourcePackages/checkouts/realm-cocoa/RealmSwift/Sync.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "Functions"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "B8A6F118-295C-461D-9E73-3EE9DB6065AE - 794d25cdc8d28d9e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RealmSwift.Functions.subscript.getter : (dynamicMember: Swift.String) -&gt; (Swift.Array&lt;RealmSwift.AnyBSON&gt;, (Swift.Result&lt;RealmSwift.AnyBSON, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FunctionsPlayground"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dominic.frei/Library/Developer/Xcode/DerivedData/FunctionsPlayground-bckguukzyyxuudauioqbupokpoky/SourcePackages/checkouts/realm-cocoa/RealmSwift/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "301"
+                  endingLineNumber = "301"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "B8A6F118-295C-461D-9E73-3EE9DB6065AE - f36baff55e962bd6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;RealmSwift.AnyBSON&gt;, (Swift.Result&lt;RealmSwift.AnyBSON, Swift.Error&gt;) -&gt; ()) -&gt; () in RealmSwift.Functions.subscript.getter : (dynamicMember: Swift.String) -&gt; (Swift.Array&lt;RealmSwift.AnyBSON&gt;, (Swift.Result&lt;RealmSwift.AnyBSON, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FunctionsPlayground"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dominic.frei/Library/Developer/Xcode/DerivedData/FunctionsPlayground-bckguukzyyxuudauioqbupokpoky/SourcePackages/checkouts/realm-cocoa/RealmSwift/Sync.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "302"
+                  endingLineNumber = "302"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
