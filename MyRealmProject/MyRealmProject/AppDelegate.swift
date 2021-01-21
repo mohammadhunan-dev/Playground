@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let realmApp = RLMApp(id: "")
         let user = realmApp.currentUser()
-        let configuration = user.configuration(partitionValue: user?.identity)
+        let configuration = user?.__configuration(withPartitionValue: "" as RLMBSON)
         
         return true
     }
