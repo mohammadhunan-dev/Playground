@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let realmApp = RLMApp(id: "")
-        let user = realmApp.currentUser()
-        let configuration = user?.__configuration(withPartitionValue: "" as RLMBSON)
+        let user = realmApp.currentUser()!
+        let configuration = user.__configuration(withPartitionValue: user.identity as! RLMBSON)
         
         return true
     }
