@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Realm
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let realmApp = RLMApp(id: "")
+        let user = realmApp.currentUser()
+        let configuration = user.configuration(partitionValue: user?.identity)
+        
         return true
     }
 
