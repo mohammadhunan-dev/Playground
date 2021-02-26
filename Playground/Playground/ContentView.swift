@@ -19,13 +19,31 @@ struct ContentView: View {
     }
     
     init() {
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(encryptionKey: Data(count: 64))
+        //        Realm.Configuration.defaultConfiguration = Realm.Configuration(encryptionKey: Data(count: 64))
         let realm = try! Realm()
-        for _ in 0..<30000 {
-            try! realm.write {
-                realm.add(TestObject())
-            }
+        try! realm.write {
+            realm.add(TestObject())
         }
+        
+        //        for _ in 0..<30000 {
+        //            try! realm.write {
+        //                realm.add(TestObject())
+        //            }
+        //        }
+        
+        var array = [TestObject]()
+        for _ in 0..<30000 {
+            array.append(TestObject())
+        }
+        try! realm.write {
+            realm.add(array)
+        }
+        
+        print(realm.objects(TestObject.self).count)
+        // 30k writes with 1 object encrypted: 1.1 GB
+        // 1 write with 30k objects encrypted: 3.3 MB
+        // 30k writes with 1 object unencrypted: 8.3 MB
+        // 1 write with 30k objects unencrypted: 7.3 MB
     }
     
 }
