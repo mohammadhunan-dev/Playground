@@ -1,0 +1,49 @@
+﻿<Properties StartupConfiguration="{F32DC790-C55A-BEE4-5149-F5B82DB1E3D0}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/realm-tutorial-unity/RealmScripts/LeaderboardManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/realm-tutorial-unity/RealmScripts/RealmController.cs" Line="128" Column="12" />
+      <File FileName="Assets/Scripts/realm-tutorial-unity/RealmScripts/AuthenticationManager.cs" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/Mechanics/TokenInstance.cs" Line="56" Column="44" />
+      <File FileName="Assets/Scripts/Gameplay/EnemyDeath.cs" Line="23" Column="2" />
+      <File FileName="Assets/Scripts/realm-tutorial-unity/RealmScripts/ScoreCardManager.cs" Line="52" Column="49" />
+      <File FileName="Assets/Scripts/Gameplay/PlayerEnteredVictoryZone.cs" Line="30" Column="2" />
+      <File FileName="Assets/Scripts/Gameplay/PlayerEnteredDeathZone.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Gameplay/PlayerDeath.cs" Line="35" Column="43" />
+      <File FileName="Assets/Scripts/realm-tutorial-unity/UI ToolKit/Authentication.uxml" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/realm-tutorial-unity/RealmScripts/LeaderboardManager.cs" Line="43" Column="38" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="61bb86b626df74e77ab93b6fa6923e8e" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Gameplay" expanded="True" />
+                <Node name="Mechanics" expanded="True" />
+                <Node name="realm-tutorial-unity" expanded="True">
+                  <Node name="RealmScripts" expanded="True">
+                    <Node name="LeaderboardManager.cs" selected="True" />
+                  </Node>
+                  <Node name="UI ToolKit" expanded="True" />
+                </Node>
+                <Node name="UI" expanded="True" />
+                <Node name="View" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="29100aec-1f12-49b7-9749-d4267078ddca" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/private/var/folders/g1/c4zpw0cn17j_q06_f055k0wm0000gp/T/61bb86b626df74e77ab93b6fa6923e8e/Assets/Scripts/realm-tutorial-unity/RealmScripts/AuthenticationManager.cs" relfile="Assets/Scripts/realm-tutorial-unity/RealmScripts/AuthenticationManager.cs" line="24" column="1" />
+      <Breakpoint file="/private/var/folders/g1/c4zpw0cn17j_q06_f055k0wm0000gp/T/61bb86b626df74e77ab93b6fa6923e8e/Assets/Scripts/realm-tutorial-unity/RealmScripts/AuthenticationManager.cs" relfile="Assets/Scripts/realm-tutorial-unity/RealmScripts/AuthenticationManager.cs" line="42" column="1" />
+      <Breakpoint file="/private/var/folders/g1/c4zpw0cn17j_q06_f055k0wm0000gp/T/61bb86b626df74e77ab93b6fa6923e8e/Assets/Scripts/realm-tutorial-unity/RealmScripts/AuthenticationManager.cs" relfile="Assets/Scripts/realm-tutorial-unity/RealmScripts/AuthenticationManager.cs" line="31" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

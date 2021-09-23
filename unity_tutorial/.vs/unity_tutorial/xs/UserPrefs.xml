@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{18562893-B8FB-6D5D-B0A0-BC32E9D6F98B}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/realm-tutorial-unity/RealmScripts/AuthenticationManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/realm-tutorial-unity/RealmScripts/AuthenticationManager.cs" Line="30" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="unity_tutorial" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="421f7e2f-abbd-4ce7-956e-f22c44017bce" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
